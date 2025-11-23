@@ -1,0 +1,3 @@
+- Aluno: Beatriz dos Santos Silva | RA: 2040482213044
+- Aluno: Lucas Reis Oliveira | RA: 2040482313005
+- Aluno: Nathan Lazzaro | RA: 2040482323054
