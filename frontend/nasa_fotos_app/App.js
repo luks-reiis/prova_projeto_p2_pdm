@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { 
+  View,
+  StyleSheet
+ } from "react-native";
+ import ImagemDia from "./components/ImagemDia";
 
-export default function App() {
-  return (
+ export default function App(){
+  return(
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ImagemDia />
     </View>
-  );
-}
+  )
+ }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+ const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    padding:20,
+    paddingTop: 50,
+    backgroundColor: '#ffffffff'
+  }
+ });
