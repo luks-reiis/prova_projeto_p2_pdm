@@ -24,5 +24,32 @@ app.get('/imagem_do_dia', async (req, res) => {
     })
 })
 
+app.get('/busca', async (req, res) => {
+  const nasaClient = axios.create({
+      baseURL: 'https://images-api.nasa.gov/'
+    })
+
+    const result = await nasaClient.get('/search', {
+      params: {
+        q: req.query.termo,
+        media_type: 'image',
+        year_start: req.query.ano,
+        year_end: req.query.ano
+      }
+    })
+
+    const items = result.data.collection.items
+
+    let images = items.map(item => ({
+      titulo: item.data[0].title,
+      data_imagem: item.data[0].date_created,
+      url: item.links[0].href
+    }))
+
+    images = images.filter((item, index) => index < 10)
+
+    res.json({ images })
+})
+
 const port = 3000
 app.listen(port, () => console.log(`Porta backend: ${port}.`))
