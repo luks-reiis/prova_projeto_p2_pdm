@@ -46,7 +46,8 @@ app.get('/busca', async (req, res) => {
     let images = items.map(item => ({
       titulo: item.data[0].title,
       data_imagem: item.data[0].date_created,
-      url: item.links[0].href
+      url: item.links[0].href,
+      descricao: item.data[0].description
     }))
 
     images = images.filter((item, index) => index < 10)
