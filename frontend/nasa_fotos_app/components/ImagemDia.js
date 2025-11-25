@@ -59,8 +59,8 @@ export default function ImagemDia() {
     }
 
     function formatarData(data) {
-        const [ano, mes, dia] = data.split("-");
-        return `${dia}/${mes}/${ano}`;
+        const objetoData = new Date(data);
+        return new Date(objetoData.getUTCFullYear(), objetoData.getUTCMonth(), objetoData.getUTCDate()).toLocaleDateString("pt-BR");
     }
 
     return(
