@@ -11,8 +11,15 @@ import api from "../utils/api";
 import BotaoAno from "../components/BotaoAno";
 
 export default function BuscaImagens() {
+  const anoAtual = 2026;
+  const anoAtualString = anoAtual.toString();
+  const anosSemAtual = [];
+
+  for(let i = anoAtual - 4;  i < anoAtual; i++){
+    anosSemAtual.push(i);
+  }
   const [termo, setTermo] = useState("");
-  const [ano, setAno] = useState("2025");
+  const [ano, setAno] = useState(anoAtualString);
   const [resultados, setResultados] = useState([]);
 
   async function buscar() {
@@ -43,7 +50,7 @@ export default function BuscaImagens() {
       />
 
       <View style={styles.linhaAnos}>
-        {[2020, 2021, 2022, 2023, 2024].map((anoBtn) => (
+        {anosSemAtual.map((anoBtn) => (
           <BotaoAno
             key={anoBtn}
             valor={anoBtn}
@@ -55,8 +62,8 @@ export default function BuscaImagens() {
 
       <View style={styles.linhaAno2025}>
         <BotaoAno
-          valor={2025}
-          selecionado={ano === "2025"}
+          valor={anoAtual}
+          selecionado={ano === anoAtualString}
           onPress={() => alternarAno(2025)}
         />
       </View>
