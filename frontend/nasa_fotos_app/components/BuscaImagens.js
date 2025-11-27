@@ -11,7 +11,7 @@ import api from "../utils/api";
 import BotaoAno from "../components/BotaoAno";
 
 export default function BuscaImagens() {
-  const anoAtual = 2026;
+  const anoAtual = new Date().getFullYear();
   const anoAtualString = anoAtual.toString();
   const anosSemAtual = [];
 
@@ -87,7 +87,7 @@ export default function BuscaImagens() {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 50
+    marginBottom: 10
   },
 
   titulo: {
