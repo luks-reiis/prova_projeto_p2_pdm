@@ -60,11 +60,11 @@ export default function BuscaImagens() {
         ))}
       </View>
 
-      <View style={styles.linhaAno2025}>
+      <View style={styles.linhaAnoAtual}>
         <BotaoAno
           valor={anoAtual}
           selecionado={ano === anoAtualString}
-          onPress={() => alternarAno(2025)}
+          onPress={() => alternarAno(anoAtual)}
         />
       </View>
 
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
 
-  linhaAno2025: {
+  linhaAnoAtual: {
     width: "100%",
     marginBottom: 20
   },

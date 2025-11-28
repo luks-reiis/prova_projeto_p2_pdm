@@ -11,8 +11,7 @@ export default function BotaoAno({ valor, selecionado, onPress }) {
     >
       <Text
         style={[
-          styles.textoAno,
-          selecionado && styles.textoAnoSelecionado
+          styles.textoAno
         ]}
       >
         {valor}
@@ -40,8 +39,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#333",
     fontWeight: "bold"
-  },
-  textoAnoSelecionado: {
-    color: "#333"
   }
 });
